@@ -1,0 +1,147 @@
+<?= "YANG TAMPIL PADA BROWSER ADALAH HASIL READ FILE PHP, UNTUK PENJELASAN BISA OPEN FILE LANGSUNG" ?>
+<?php //LOOPING / PENGULANGAN ?>
+
+<?php echo "REFRESH PHP 1"; ?>
+<br>
+<?php echo "Looping FOR"; ?>
+<br>
+<?php for( $i=0; $i<3; $i++ ): ?>
+<?php echo "Hello World <br>"; ?>
+<?php endfor; ?>
+<?php
+/*
+1. for 
+terdiri dari " nilai awal" ; "kondisi terminasi(pengulangan berapa kali" ; "increment"
+kemudian selama syarat sesuai akan dilakukan sintaks php misal echo hello world
+contoh (penulisan dalam mode templating {memisahkan script php dan html})
+"looping for 
+<?php echo "<br>"; ?> // BREAK LINE UNTUK TURUN SATU BARIS
+<?php for( $i=0; $i<3; $i++ ): ?> // $i=0;(nilai awal | $i<3;(kondisi terminasi | $i++ (increment untuk menambahkan sebesar 1x pada nilai awal variable) ) )
+<?php echo "Hello World <br>"; ?> // PRINT KE LAYAR "HELLO WORLD DAN ULANGI SESUAI KONDISI TERMINASI"
+<?php endfor; ?>" // PADA GAYA TEMPLATING AKAN SELALU DIAKHIRI DENGAN "END", JIKA FOR "ENDOFOR"
+*/
+?>
+<br>
+<br>
+<?= "Looping While"; ?>
+<br>
+<?php $i=0; ?>
+<?php while ($i < 3): ?>
+<?php echo "hello World <br>"; ?>
+<?php $i++; ?>
+<?php endwhile; ?>
+<?php 
+/*
+2. while (sama seperti for, ada nilai awal, kondisi terminasi dan increment decrement)
+apa yang bisa dilakukan for bisa juga dilakukan while
+cuma while lebih cocok digunakan pada looping yang tidak diketahui iterationya
+*/
+ ?>
+ <br>
+ <br>
+<?= "Looping Do While" ?>
+<br>
+<?php 
+$i = 0;
+do{echo "Hello World <br>"; $i++;}while($i<3);
+?>
+<?php 
+/*
+do while sama seperti looping sebelumnya punya nilai awal, terminasi dan increment decrement
+cuma do while apa pun kondisinya akan sintaks misalnya echo hello world akan dikerjakan dahulu
+dan do while tidak bisa ditulis dalam gaya templating, hanya bisa ditulis pada gaya klasik
+*/ ?>
+<?php //CONDITIONAL STATEMENTS / PENGKONDISIAN ?>
+<br>
+<br>
+<?= "IF ELSE"; ?>
+<br>
+"<?php $i = 9; ?>
+<?php if ($i < 10): ?>
+<?php echo "ya $i lebih kecil dari 10"; ?>
+<br>
+<?php else: ?>
+<?php echo "coba ganti variable i lebih dari 10 pasti ini yang di print"; ?>
+<?php endif; ?>
+<?php /*
+1. if | else
+"<?php $i = 0; ?> // nilai variable
+<?php if ($i < 10): ?> // syarat jika nilai variable lebih kecil dari 10, maka ?
+<?php echo "ya Si lebih kecil dari 10"; ?> // print bagian ini ke layar // kita bisa print langsung nilai variable Si ~ karena menggunakan kutip2 ~ interpolasi
+jika hanya menggunakan kutip satu harus menggunakan concatenation / penggabung string jadi seperti ini <?php echo 'ya '.$i.' lebih kecil dari 10'; ?>
+<?php else: ?> // jika nila variable tidak sesuai syarat diatas, maka print dibawah "else" ini
+<?php echo "coba ganti variable i lebih dari 10 pasti ini yang di print"; ?>
+<?php endif; ?>
+"
+sebenarnya kalau secara terstruktur ~ seorang IT engineer (mau network engineer atau software engineer harus berpikir terstruktur)
+dalam conditional statement "if else" itu penyederhanaan saja
+dalam proses itu ada then. ~ fiance ticoalu
+*/ ?>
+<br>
+<br>
+<?= "IF ELSE IF ELSE" ?>
+<br>
+<?php $i = 11; ?>
+<?php if ($i < 10): ?>
+<?php echo "ya $i lebih kecil dari 10"; ?>
+<br>
+<?php elseif ($i == 10): ?>
+<?php echo "nilai anda pas 10"; ?>
+<?php else: ?>
+<?php echo 'nilai variable $i > dari 10'; ?>
+<?php endif; ?>
+<?php /*dengan else if pada tengah tengah if dan else
+kita bisa menambahkan syarat lain untuk action tertentu yang kita inginkan*/ ?>
+<br>
+<br>
+<?= "*****MEMBUAT TABEL BARIS KOLOM DENGAN LOOPING DAN CONDITIONAL*****"; ?>
+<br>
+<br>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Refresh PHP 1</title>
+</head>
+<body>
+<table border="1" cellpadding="7" cellspacing="0">
+	<?php for($i=1; $i<=3; $i++): ?>
+	<tr>
+    <?php for($j=1; $j<=3; $j++): ?>
+    	<?php if ($i % 2 == 0 ): ?>
+    	<td><?php echo "INI BARIS GENAP"; ?></td>
+        <?php else: ?>		
+	    <td><?php echo "$i,$j"; ?></td>
+	    <?php endif; ?>
+    <?php endfor; ?>
+    </tr>	
+<?php endfor; ?>
+</table>
+</body>
+</html>
+<?php /*
+<!DOCTYPE html>
+<html>
+<head>
+	<title>baris kolom</title>
+</head>
+<body>
+<table border="1" cellpadding="7" cellspacing="0">
+	<?php for($i=1; $i<=3; $i++): ?>
+	<tr>
+    <?php for($j=1; $j<=3; $j++): ?>
+    	<?php if ($i % 2 == 0 ): ?> // KARENA KITA INGIN BARIS DUA PADA TABEL DI ISI DENGAN NAMA "GENAP" maka variable "$i (untuk mewakili baris) harus dimodulus 2" karena sisa bagi bilangan genap dibagi 2 = 0
+    	<td><?php echo "INI BARIS GENAP"; ?></td>
+        <?php else: ?>		
+	    <td><?php echo "$i,$j"; ?></td>
+	    <?php endif; ?>
+    <?php endfor; ?>
+    </tr>	
+<?php endfor; ?>
+</table>
+</body>
+</html>
+*/ ?>
+
+
+
+
