@@ -1,0 +1,106 @@
+<?= "YANG TAMPIL PADA BROWSER ADALAH HASIL READ FILE PHP, UNTUK PENJELASAN BISA OPEN FILE LANGSUNG" ?>
+
+<?php /* 
+ARRAY, SECARA SEDERHANA ARRAY BISA DISEBUT VARIABLE YANG BISA MEMPUNYAI BANYAK NILAI ~ NILAI INI BISA  BERBAGAI MACAM TIPE DATA
+
+BERIKUT CARA MEMBUAT ARRAY
+*/ ?>
+
+<?php $ini_array1 = [1, "satu", true]; ?>
+<?php $ini_array2 = ["january", "february", "march"]; ?>
+<?="ini hasil dari vardump  = "; ?>
+<?php var_dump($ini_array1); ?>
+<br>
+<?= "ini hasil dari printr = "; ?>
+<?php print_r($ini_array2); ?>
+
+<?php /*  
+
+SECARA TEKNIKAL ARRAY BISA DISEBUT PASANGAN ANTARA KEY DAN VALUE, UNTUK LEBIH JELASNYA MARI KITA BEDA 
+HASIL DARI VAR_DUMP DAN PRINT_R
+
+ini hasil dari vardump  =array(3) {
+  [0]=>
+  int(1)
+  [1]=>
+  string(4) "satu"
+  [2]=>
+  bool(true)
+}
+<br>
+ini hasil dari printr =Array
+(
+    [0] => january
+    [1] => february
+    [2] => march
+)
+
+key nya ada index yang dimulai dari 0 dan valuenya sebagai contoh adalah january, februari, satu dan lainya
+kita tidak bisa mencetak langsung array ke layar dengan  echo, kita harus menggunakan var_dump atau print_r
+bedanya var_dump dan print_r adalah var_dump lebih detail dengan menampilkan tipe data dan informasi seperti jumlah valuenya
+
+walaupun kita tidak bisa mencetak array langsung dengan echo, kita tetap bisa mencetak isi / element dari array dengan echo
+misal kita ingin menampilkan march atau key dengan index nomor 2
+*/?>
+<br>
+<?= " ini hasil echo element array = "; ?>
+<?php echo $ini_array2[2]; ?>
+<br>
+<?php /* berikut cara menambahkan element pada array */?>
+<?php $ini_array2[] = "april"; ?>
+<?php echo "ini hasil cara menambahkan element pada array = " ?>
+<?php var_dump($ini_array2); ?>
+
+<?php // --------------- CONTOH SOAL/ CONTOH KASUS / KUIS ARRAY DENGAN LOOP ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>array</title>
+</head>
+<?php $numbers = [2,4,6,8,10]; ?>
+<?php $students = [
+	["Fiance Ticoalu", 2012302008, "Teknik komputer"], 
+	["Arif Syafi'i", 2012302009, "Teknik komputer"], 
+	["Muhammad Rizki", 2012302030, "Teknik informatika"]
+
+]; ?>
+<body>
+<h3>Menampilkan array $numbers dengan loop for dengan menghitung index manual</h3>
+<?php for($number = 0; $number < 5; $number++): ?>
+	<?= $numbers[$number]; ?>
+<?php endfor; ?>
+<br>
+<h3>Menampilkan array $numbers dengan loop for dengan menghitung otomatis</h3>
+<?php for($number = 0; $number < count($numbers); $number++): ?>
+	<?= $numbers[$number]; ?>
+<?php endfor; ?>
+<br>
+<h3>Menampilkan array $numbers dengan loop khusus array foreach</h3>
+<?php foreach($numbers as $number):?>
+	<?php echo $number;  ?>
+<?php endforeach; ?>
+<br>
+<?php var_dump($students); ?>
+<br>
+<h3>Menampilkan array multidimensi ~ array dalam array dengan loop khusus array foreach</h3>
+<?php foreach($students as $student): ?>
+	<h5>Data Mahasiswa</h5>
+	<ul>
+		<li>Nama	: <?= $student[0]; ?></li>
+		<li>NIM		: <?= $student[1]; ?></li>
+		<li>Prodi	: <?= $student[2]; ?></li>
+	</ul>
+<?php endforeach; ?>
+
+<?php /*
+JADI DALAM ARRAY MULTIDIMENSI INI, KITA TIDAK BISA MENCETAK DENGAN ECHO VARIABLE $STUDENT SEPERTI PADA SEBELUMNYA $NUMBER
+KARENA YANG KITA CETAK MASIH BERUPA ARRAY DAN ECHO TIDAK BISA MENCETAK ARRAY LANGSUNG, UNTUK BISA MENCETAK VALUENYA KITA HARUS MENAMBAHKAN INDEX
+ANGKA LAGI DI BELAKANG SEPERTI $student[0].
+Array multidimensi yang sedang kita bahas ini disebut array numerik, karena indexnya di identifiaksi dengan angka
+berikutnya kita akan belajar array assosiatif, yang index nya akan kita tentukan sendiri dengan string
+
+*/ ?>
+
+</body>
+</html>
