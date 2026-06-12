@@ -1,3 +1,3 @@
 Kita bisa install MySQL atau MariaDB untuk menjalankan kode yang akan dibahas
-paling gampang anda bisa install XAMPP di windows atau LAMMP di linux
-anda bisa konsol via cmd ata konsol lewa phpmyadmin
+Paling gampang kita bisa install XAMPP jika pengguna windows atau LAMMP jika pengguna distro linux
+Kita bisa konsol via cmd ata konsol lewat phpmyadmin
