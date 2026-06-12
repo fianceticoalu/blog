@@ -1,0 +1,61 @@
+<?= "YANG TAMPIL PADA BROWSER ADALAH HASIL READ FILE PHP, UNTUK PENJELASAN BISA OPEN FILE LANGSUNG" ?>
+
+<?php //ASSOCIATIVE ARRAY ?>
+<?php /* 
+
+ARRAY ASSOCIATIVE ADALAH ARRAY YANG KEY-NYA MENGGUNAKAN STRING, BUKEN NUMERIK YANG INDEXNA DIMULAI DARI 0
+
+JAD KEYNYA KITA BUAT SENDIRI SESUAI KEBUTUHAN DAN KEIGINAN KITA / SI PROGRAMMER
+
+DIBAWAH INI ADALAH CONTOH ARRAY ASSOCIATIVE
+
+*/ ?>
+
+<?php 
+
+$students = [
+
+	["Nama"  => "Fiance Ticoalu",
+	"NIM"   => "2012302008",
+	"Prodi" => "Teknik Komputer"],
+
+	["Nama"  => "Suprayitno",
+	"NIM"   => "2012302009",
+	"Prodi" => "Teknik Komputer"]
+
+];
+
+//BAGAIMANA CARA JIKA KITA INGIN MENAMPILKAN NAMA FIANCE TICOALU DENGAN ECHO
+//BEGINI CARANYA
+echo "<br>";
+echo $students[0]["Nama"];
+
+//JADI TERLIHAT ARRAY DIATAS ADALAH GABUNGAN ANTARA ARRAY NUMERIK DAN ARRAY ASSOCIATIVE
+
+//PEMAHAMAN ARRAY INI ADALAH FUNDAMENTAL DAN MANDATORY, JIKA TIDAK PAHAM LIHAT DAN ULANGI LAGI SAMPAI PAHAM
+//PEMAHAMAN AKAN ARRAY NUMERIK DAN ASSOCIATIVE INI ADALAH FONDASI MENUJU READ SUATU DATA DARI PROSES QUERY PADA DATABASE
+
+ ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array associative</title>
+</head>
+<body>
+
+<h1>CONTOH TAMPILKAN DATA ARRAY STUDENTS DENGAN FOREACH</h1>
+
+<h3><u>Data Students</u></h3>
+<?php foreach($students as $student): ?>
+	<ul>
+		<li>NAMA 	= <?= $student["Nama"]; ?></li>
+		<li>NIM		= <?= $student["NIM"]; ?></li>
+		<li>PRODI   = <?= $student["Prodi"]; ?></li>
+	</ul>
+<?php endforeach; ?>
+
+</body>
+</html>
+
+<?php var_dump($students); ?>
+
