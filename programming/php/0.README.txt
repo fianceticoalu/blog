@@ -1,0 +1,3 @@
+isi index php fundamental ini sebenarnya hasil copy dari file php ke txt
+penjelasan ada dibaris penanda komentar <?php //"......"?> dam <?php /*"......*/"?>
+jadi jika ingin file ini running taruh didirektori yang terhubung dengan web server seperti apache dll
