@@ -1,0 +1,120 @@
+<?= "YANG TAMPIL PADA BROWSER ADALAH HASIL READ FILE PHP, UNTUK PENJELASAN BISA OPEN FILE LANGSUNG" ?>
+<br>
+<?php // METODA REQUEST GET DAN POST ?>
+<?php //variable scope
+
+
+$angka = 100; 
+$huruf = "ABCDE";
+function testFungsi() {
+
+	global $angka;
+	$huruf = "FGHIJ";
+
+	echo $angka;
+	echo "<br>";
+	echo $huruf;
+
+}
+
+testFungsi();
+echo "<br>";
+echo $huruf;
+
+?>
+
+<?php /* MARI KITA BEDA VARIABLE DAN FUNCTION DIATAS
+
+- INTINYA VARIABLE DI DALAM FUNCTION TIDAK SAMA DENGAN VARIABLE DILUAR FUNCTION.
+  INI TERBUKTI SAAT KITA PANGGIL FUNCTION testFungsi() HASIL ECHO $huruf KELUAR YANG FGHIJ BUKAN ABCDE.
+  JUSTRU ABCDE TAMPIL KELAYAR SAAT KITA ECHO $huruf DILUAR FUNCTION.
+
+- JIKA INGIN VARIABLE DILUAR FUNCTION BERLAKU UNTUK DIDALAM FUNCTION, DIDEPAN VARIABLE TERSEBUT KITA TAMBAHKAN global
+  SEPERTI PADA VARIABLEE $angka.
+
+- JADI BISA DIAKTAKAN PEMBAHASAN SAMPAI SAAT INI ADA LINGKUP VARIABLE LOKAL DAN VARIABLE GLOBAL
+- SELANJUTNYA AKAN KITA BAHAS VARIABLE SUPER GLOBAL.
+
+*/ ?>
+
+<?php /* VARIABLE SUPERGLOBAL
+
+	  ADA BANYAK VARIABLE SUPERGLOBAL, TAPI DISINI DAN SETERUSNYA AKAN KITA BAHAS 4
+
+	  1. $_GET
+	  2. $_POST
+	  3. $_SESSION
+	  4. $COOKIE
+
+	  - ADALAH VARIABLE GLOBAL MILIK PHP
+	  - ADALAH ARRAY ASSOSIATIF, KARENA ITU PERLAKUKAN SEBAGAIMANA MEMEPERLAKUKAN ARRAT ASSOSIATIF
+
+	  OKE LANGSUNG SAJA KITA BAHAS
+
+	  1. $_GET
+	  *** INGAT VARIABLE SUPERGLOBAL $_GET BERBEDA DENGAN METODA REQUUEST GET SESUAI TEMA YANG KITA  BAHAS "METODA REQUEST GET DAN POST"
+	  **  INTINYA $_GET ADALAH VARIBALE SUPERGLOBAL YANG AKAN DIGUNAKAN UNTUK MENANGKAP DATA YANG KITA KIRIM DENGAN METODA REQUEST GET
+	  *   METODA REQUEST GET DATA DIKIRIMKAN AKAN DIKIRIMKAN LEWAT URL ~ SEHINGGA DATA TERLIHAT
+
+	 */
+
+	  $students = [
+
+	["Nama"  => "Fiance Ticoalu",
+	"NIM"   => "2012302008",
+	"Prodi" => "Teknik Komputer"],
+
+	["Nama"  => "Suprayitno",
+	"NIM"   => "2012302009",
+	"Prodi" => "Teknik Komputer"]
+
+];
+		
+ ?>
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>metodaRequestGET&POST</title>
+ </head>
+ <body>
+ 	<h3>LIST MURID</h3>
+ 	<p>Bagian ini mengirim data array dengan metoda request get yang nanti akan ditangkap oleh superglobal $_GET di halaman lain sesuai link</p>
+ 	<?php foreach($students as $student): ?>
+ 	<ul>
+ 		<li><a href="metodaReqGET.php?Nama=<?= $student['Nama'];?>&NIM=<?= $student['NIM'];?>&Prodi=<?= $student['Prodi'];?>"><?= $student["Nama"]; ?></a></li>
+ 	</ul>
+    <?php endforeach; ?>
+    <br>
+    <p>Bagian ini mengirim data array dengan metoda request post yang nanti akan ditangkap oleh superglobal $_POST di halaman lain sesuai link</p>
+    <form action="metodaReqPOST.php" method="post">
+    	<ul>
+    		<li>
+    			Nama  : <input type="text" name="Nama"> |  
+    			NIM   : <input type="text" name="NIM"> | 
+    			Prodi : <input type="text" name="Prodi">
+
+    			<button type="submit" name="submit">KIRIM!</button>
+    		</li>
+    	</ul>
+    </form>
+ </body>
+ </html>
+
+ <?php /* 
+
+baris ini '<li><a href="metodaReqGET.php?Nama=<?= $student['Nama'];?>&NIM=<?= $student['NIM'];?>&Prodi=<?= $student['NIM'];?>"><?= $student["Nama"]; ?></a></li>'
+adalah contoh metoda reques get, data dikirim lewat url saat link tersebut ditekan 
+
+jadi setelah "metodReqGET.php" berikutnya ditandai dengan ?  kita mengirimkan data array assosiatif Nama = <?= $student['Nama'];?>
+dan jika ingin mengirimkan data lain bisa diikuti dengan tanda '&' contoh '"metodaReqGET.php?Nama=<?= $student['Nama'];?>&NIM=<?= $student['NIM'];?>&Prodi=<?= $student['NIM'];?>"'
+penjelasan selanjutnya buka file metodaReqGET.php
+
+
+Terkait metoda request post, data harus dikirim dengan form ditandai dengan tag html '<form></form>'
+pada action di form menandakan kemana data tersebut akan dikirim
+pada method di form menerangkan data dikirim dengan metoda request post
+dan name pada tag input html akan menjadi key pada data array contoh 'Nama  : <input type="text" name="Nama">'
+
+ */ ?>
+
