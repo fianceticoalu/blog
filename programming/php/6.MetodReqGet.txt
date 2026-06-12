@@ -1,0 +1,46 @@
+<?php 
+
+if(!isset($_GET["Nama"]) || !isset( $_GET["NIM"]) || !isset($_GET["Prodi"]) ){
+
+	header('location: 5.refreshPHP_5.php');
+}
+
+ ?>
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Metoda Req GET</title>
+ </head>
+ <body>
+ 
+<h3>DATA MURID</h3>
+<p>Tangkap data yang dikirim dengan metoda request get menggunakan superglobal $_GET</p>
+<ul>
+	<li>Nama  = <?= $_GET["Nama"]; ?></li>
+	<li>NIM   = <?= $_GET["NIM"]; ?></li>
+	<li>Prodi = <?= $_GET["Prodi"]; ?></li>
+</ul>
+<p><a href="5.refreshPHP_5.php">Kembali</a></p>
+ </body>
+ </html>
+
+ <?php /*
+
+setelah link dihalaman 5.refreshPHP_5.php yang menuju halaman ini di klik, coba lihat url/address barr
+akan ada ini 'https://192.168.137.200/7.RefreshPHP/metodaReqGET.php?Nama=Fiance%20Ticoalu&NIM=2012302008&Prodi=2012302008'
+itu artinya ada data yang dikirim ke halaman ini menggunakan metoda request get
+
+karena data yang dikirimkan dari halaman 5.refreshPHP_5.php  array assosiatif dengan tanda 'Nama=<?= $student['Nama'];?>'
+maka untuk menampilkan nama murid setelah $_GET harus diberi key yang sesuai juga untuk menampilkan value yang benar contoh = <?= $_GET["Nama"]; ?>
+
+script / sintaks  ini 'if(!isset($_GET["Nama"]) || !isset( $_GET["NIM"]) || !isset($_GET["Prodi"]) ){
+
+	header('location: 5.refreshPHP_5.php');
+}'
+
+digunakan untuk mengecek apakah variable $_GET['Nama'] sudah dibuat atau belum ~ 
+jika belum, jika ada yang ke halaman ini akan dikembalikan lagi ke  halaman awal location: 5.refreshPHP_5.php
+mengapa saya berikan ini di halaman ini, karena jika halaman ini dibuka langsung tanpa klik link/data get tidak dikirimkan akan error, coba saja.
+
+ */ ?>
