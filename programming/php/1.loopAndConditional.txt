@@ -1,7 +1,5 @@
 <?= "YANG TAMPIL PADA BROWSER ADALAH HASIL READ FILE PHP, UNTUK PENJELASAN BISA OPEN FILE LANGSUNG" ?>
 <?php //LOOPING / PENGULANGAN ?>
-
-<?php echo "REFRESH PHP 1"; ?>
 <br>
 <?php echo "Looping FOR"; ?>
 <br>
