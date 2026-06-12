@@ -1,0 +1,48 @@
+<?= "YANG TAMPIL PADA BROWSER ADALAH HASIL READ FILE PHP, UNTUK PENJELASAN BISA OPEN FILE LANGSUNG" ?>
+<br>
+<?php //USER DEFINE FUNCTION ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar User define function</title>
+</head>
+
+<?php function Sambutan ($waktu, $nama){
+	return "Selamat $waktu, Pak $nama";
+} ?>
+
+<body>
+
+
+<h2><?= Sambutan('Pagi', 'Fian'); ?></h2>
+
+
+</body>
+</html>
+
+<?php /*
+MARI KITA BEDA SCRIPT INI SUPAYA LEBIH PAHAM TERKAIT USER DEFINE FUNCTION
+
+<?php function Sambutan ($waktu, $nama){
+	return "Selamat $waktu, Pak $nama";
+} ?>
+
+<?= Sambutan('Pagi', 'Fian'); ?>
+
+function = keyword untuk membuat fungsi kita sendiri ~ user define function
+Sambutan - Nama fungsi yang kita buat, sebagai identifikasi supaya fungsi ini bisa kita panggil
+($waktu, $nama) = Parameter ~ berupa variable yang akan digunakan untuk menerima nilai saat fungsi dipanggil
+return = berfungsi untuk mengembalikan nilai ~ mmengirim nilai dari fungsi ke lokasi pemanggil
+
+Sambutan('Pagi', 'Fian') = fungsi dipanggil dengan diikuti argumen -> ('Pagi', 'Fian') nilai ini akan masuk ke parameter yang berada di function
+
+INTINYA USER DEFINE FUNCTION INI MEMBUAT FUNCTION KITA SENDIRI DILUAR BUILT IN FUNCTION DARI PHP
+
+USER DEFINE FUNCTION HARUS DIBUAT / DIDEFINISIKAN TERLEBIH DAHULU BARU BISA DIPANGGIL
+USER DEFINE FUNCTION BIASANYA MENGEMBALIKAN NILAI, TAPI BOLEH TIDAK MENGEMBALIKAN NILAI
+MENGEMBALIKAN NILAI MENGGUNAKAN SINTAKS RETURN
+DALAM USER DEFINE FUNCTION PARAMETER DAN ARGUMEN HARUS SAMA DALAM ARTI JIKA ADA 2 PARAMETER YA HARUS ADA 2 ARGUMEN YANG DI ISIKAN UNTUK DIKIRIM KE PARAMETER, JIKA TIDAK AKAN ERROR
+ATAU BISA DIAKALI DENGAN MEMBERIKAN NILAI DEFAULT PADA PARAMETER TERSEBUT.
+
+
+*/ ?>
