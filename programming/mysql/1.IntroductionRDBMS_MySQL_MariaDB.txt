@@ -7,7 +7,7 @@ BANYAK ORANG MENGIRA ~ BAHKAN TERMASUK ORANG IT - MYSQL, ORACLE, MONGODB ITU DAT
 - ADA BANYAK TIPE DBMS, TAPI YANG KITA BAHAS ADA RELATIONAL DATABASE DALAM HAL INI MARIA DB
 
 TENTANG RDBMS MySQL DAN MARIA DB
-- MySQL dan MariaDB adalah database yang mirip, tapi
+- MySQL dan MariaDB adalah DBMS yang mirip, tapi
   MySQL dimiliki Oracle ~ dual lisensi ada yang closed source dan open source
   MariaDB 100% open source
   Jadi dulu ketika MySQL dibeli oleh ORACLE, ada kekhawatiran perubahan arah MySQL oleh Oracle,
