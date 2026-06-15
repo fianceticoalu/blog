@@ -1,0 +1,2 @@
+Di harapkan sudah mempunyai basic knowledge terkait IP4 Addressing seperti Subnetting/VLSM
+Karena disini saya tidak membahas terkait hal hal tersebut
