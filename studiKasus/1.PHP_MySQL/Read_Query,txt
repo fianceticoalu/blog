@@ -1,2 +1,124 @@
 Jalankan Kode PHP dan MySQL ini di direktori yang terhubung dengan WebServer seperti APACHE dan RDBMS seperti MySQL/MariaDB
 Atau paling mudah untuk testing pakai XAMPP/LAMPP
+
+diharapkan sebelum lanjut baca, sudah ada pengetahuan dasar php dan mysql
+
+<?php 
+
+/* 
+
+ALUR LOGIKA FUNCTION QUERY 
+
+[Start]
+   ↓
+Panggil function query($query)
+   ↓
+Ambil koneksi (global $koneksi)
+   ↓
+Jalankan mysqli_query($koneksi, $query)
+   ↓
+Apakah query berhasil?
+   ├── Tidak → (error / false) → [End]
+   ↓ Ya
+Inisialisasi $rows = []
+   ↓
+Ambil 1 baris data (mysqli_fetch_assoc)
+   ↓
+Apakah masih ada data?
+   ├── Ya → masukkan ke $rows[] → ulangi ambil data
+   └── Tidak
+   ↓
+Return $rows
+   ↓
+Disimpan ke $books
+   ↓
+[End]
+
+
+INGAT DALAM OPERASI CRUD~CREATE, READ, UPDATE, DELETE DALAM MySQL/MARIADB
+QUERY TERMASUK PADA READ
+
+ADA BANYAK METODA QUERY DATA DARI TABEL DALAM DATABASE
+CARA YAANG SAYA GUNAKAN ADALAH SALAH SATUNNYA, TETAPI SECARA UMUM ALURNYA SAMA
+
+*/
+
+// Koneksi Database
+$koneksi = mysqli_connect("localhost", "root", "rahasia_dong", "buku");
+
+function query($query)
+{
+    // Koneksi database dan menglobalkan $koneksi ~ ingat variable scope
+    global $koneksi;
+
+    $result = mysqli_query($koneksi, $query);
+
+    // membuat varibale array
+    $rows = [];
+
+    // mengambil semua data dalam bentuk array
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+
+    return $rows;
+}
+
+
+$books = query("SELECT * FROM list_buku ORDER BY id DESC");
+
+
+ ?>
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>query</title>
+ </head>
+ <body>
+<h3>LIST BUKU</h3>
+<table border="1" cellpadding="5" cellspacing="1">
+<tr>
+	<td>no</td>
+	<td>judul</td>
+	<td>author</td>
+	<td>genre</td>
+	<td>tahun rilis</td>
+	<td>harga (rp)</td>
+</tr>
+ <?php $i=1; ?>
+  <?php foreach($books as $book): ?>
+	<tr>
+		<td><?= $i++; ?></td>
+		<td><?= $book["judul"]; ?></td>
+		<td><?= $book["author"]; ?></td>
+		<td><?= $book["genre"];  ?></td>
+		<td><?= $book["release_date"]; ?></td>
+		<td><?= $book["harga"]; ?></td>
+	</tr>
+  <?php endforeach; ?>
+</table>
+
+ </body>
+ </html>
+
+ <?php 
+
+/* 
+
+JIKA KITA KONSOL LANGSUNG PADA MySQL/MARIADB
+UNTUK MENAMPILAKAN DATA YANG SEPERTI PADA WEB APP SEDERHANA INI
+KITA CUKUP MASUKAN  PERINTAH INI "SELECT * FROM list_buku ORDER BY id DESC"
+
+TAPI  MENJADI LEBIH KOMPLEKS JIKA SUDAH MASUK LINGKUNGAN WEB APP DENGAN PHP
+KARENA PHP BUKAN DBMS JADI HARUS 
+1. KONEKSI KE RDBMS MySQL
+2. KIRIM QUERY
+3. AMBIL HASIL QUERY
+4. SIMPAN KE VARIABLE
+5. TAMPILKAN KE FRONTEND 
+
+*/
+
+  ?>
+
