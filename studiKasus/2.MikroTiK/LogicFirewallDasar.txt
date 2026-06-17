@@ -1,1 +1,14 @@
+- Secara umum pada firewall berbasis kernel linux seperti Mikrotik, menggunakan logic pengkondisian if-then pada setup firewall, seperti ip->firewall->filter.
+- Pada settingan router firewall tingkat lanjut seperti rule pada routing BGP bisa saja lebih kompleks dengan melibatkan scripting dan operator operator logika
+  seperti and or not.
+- Pada intinya pada pembahasan studi kasus ini saya ingin menekankan, setup networking pun tetap menggunakan logika terstruktur bukan hapalan config.
+  dari sini kita bisa simpulkan juga seorang network engineer maupun software engineer berangkat dari logic yang sama.
 
+Studi Kasus 1
+seorang network engineer ingin drop src-address: 192.168.1.0/24  forward ke dst-address: 192.168.2.0/24 dengan protocol:UDP port:53
+mau engineer tersebut setup dengan GUI atau Scripting di terminal, logicnya seperti ini:
+- if(src-address = 192.168.1.0/24 && dst-address = 192.168.2.0/24 && dst-protocol = UDP && dst-port = 53 )
+  then {DROP}
+- dari sini kita lihat tidak ada pengkondisian lain seperti else atau elseif.
+- dalam taraf tertentu terlihat sangat sederhana bukan.
+- tapi dalam background sebenarnya alurnya sangat kompleks, seperti melibatkan alur chain dan routing decision
