@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>BGP ROS6-7</title>
+<style>
+body {
+  font-family: monospace;
+  background: #ffffff;
+  color: #000000;
+}
+a {
+  text-decoration: none;
+}
+hr {
+  border: 1px solid #000;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Membandingkan BGP Routing di MikroTik ROS6 dan 7 </h2>
+<p>Topologi</p>
+<hr>
+<div style="display: flex; align-items: flex-start; gap: 20px;">
+
+  <img src="#" width="150">
+
+  <div>
+    <ul>
+      <b>Kebutuhan LAB:</b><br>
+      <li>VirtualBox, GNS3 - untuk cara install dan confignya bisa copas link dibawah ini ke address bar</li>
+      <li>https://www.youtube.com/watch?v=KhwcGyo55mc</li>
+      <li>Atau kalian bisa liaht artikel lain di internet / AI</li>
+    </ul>
+  </div>
+
+</div>
+<hr><br>
+<i><b>Materi BGP ini sebenarnya masuk dalam pembahasan tingkat lanjut</b></i><br>
+<i><b>Untuk membahas materi BGP secara penuh di mikrotik bisa memakan waktu seminggu</b></i><br>
+<i><b>Karena itu disini saya hanya membandingkan perbedaan setup BGP di ROS6 dan ROS7</b></i><br>
+<i><b>dan saya akan menjelaskan poin poin dasar setup BGP</b></i><br><br><br>
+
+<b>>DASAR SETTING BGP ~ DI VENDOR ROUTER APAPUN </b
+<ul>
+  <li>- Set ASN dan router id</li>
+  <li>- Set BGP Peering</li>
+  <li>- Advertise BGP Networks</li>
+  <li>- Filtering BGP Networks</li>
+</ul><br>
+<b>DALAM LAB INI KITA AKAN LAKUKAN HAL HAL INI</b>
+<ul>
+  <li>- Config ASN dan router id</li>
+  <li>- Config BGP Connection / Peering</li>
+  <li>- Advertise Networks</li>
+  <li>- Filtering Networks (Tolak active prefix 25, terima preifx 24)</li>
+  <li>- Tidak ada filtering networks pada ASN 30 dan 60</li>
+</ul><br>
+<b>GOALS~ YANG HARUSNYA KITA DAPAT SETELAH CONFIG</b>
+<ul>
+  <li>- BGP Peering establish</li>
+  <li>- Advertise networks berhasil</li>
+  <li>- di Router ASN 10,20,40,50 hanya ada prefix dst-address 24</li>
+  <li>- di Router ASN 30 dan 60 ada prefix dst-address 24 dan 25</li>
+  <li>- bisa saling ping antara router BGP</li>  
+</ul><br>
+<i>Config BGP saya share di one drive dengan format pdf klik <a href="https://1drv.ms/b/c/4ea391131f52c4a5/ETKYtojHKqVKoNoNV_Z8BEEBLIQ5I4I1wVlvxA-noUrgIg">di sini</a>untuk download</i>
+</body>
+</html>
