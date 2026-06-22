@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>CreateDB&Table</title>
+<style>
+body {
+  font-family: monospace;
+  background: #ffffff;
+  color: #000000;
+}
+a {
+  text-decoration: none;
+}
+hr {
+  border: 1px solid #000;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Membuat database dan tabel</h2>
+<mark>CREATE DATABASE buku;</mark><br>
+<i>kita lihat apakah sudah berhasil membuat database...</i><br>
+<mark>SHOW DATABASES;</mark><br>
+<i>jika database sudah ada...</i><br>
+<mark>USE buku;</mark><br>
+<i>selanjutnya membuat tabel didalam database buku ... </i>i><br>
+<mark>CREATE TABLE list_buku(</mark><br>
+<mark>id INT PRIMARY KEY AUTO_INCREMENT,</mark><br>
+<mark>judul VARCHAR(100) NOT NULL,</mark><br>
+<mark>author VARCHAR(100) NOT NULL,</mark><br>
+<mark>genre VARCHAR(50) NOT NULL,</mark><br>
+<mark>release_date YEAR,</mark><br>
+<mark>harga DECIMAL(10,2) NOT NULL</mark><br>
+<mark>);</mark><br>
+
+
+
+</body>
+</html>
