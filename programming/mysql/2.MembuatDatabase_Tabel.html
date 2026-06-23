@@ -53,18 +53,11 @@ hr {
 <mark>DECIMAL(10,2) memaksudkan maksimal 8 digit angka dengan dua angka di belakang koma, berarti angka maxnya 99999999,99</mark><br>
 <mark>tapi pada saat penulisan di sql tanda ,(koma) harus diganti dengan tanda . (titik)</mark><br><br>
 <i>Mari kita lanjut dengan insert data pada tabel list_buku, nantinya data yang masuk ini disebut ROW / RECORD...</i><br>
-
-
-
-
-  
-
-
-
-
-
-
-
-
+<mark>INSERT INTO list_buku (judul, author, genre, release_date, harga) VALUES ('MikroTik Kungfu Kitab ', 'Rendra', 'Sains-Komputer', 2019, 60000.00);</mark><br>
+<i>Mari kita bedah kode SQL diatas...</i><br>
+<mark>INSERT INTO list_buku</mark><i>~ ini memasukan ke tabel list_buku, dengan asumsi kita sudah berada pada database buku</i><br>
+<i>Jika belum berada pada database buku bisa lakukan ini ...</i><mark>INSERT INTO buku.list_buku</mark><br>
+<mark>(judul, author, genre, release_date, harga) VALUES ('MikroTik Kungfu Kitab ', 'Rendra', 'Sains-Komputer', 2019, 60000.00);</mark><i>Intinya antara field dan values posisinya harus sama</i><br>
+<i>Ingat MySQL/MariaDB ini bersifat array assosiatif, maka perlakukanlah seperti array assosiatif ~ ingat pelahjaran array assosiatif yang saya bahas pada PHP</i>
 </body>
 </html>
