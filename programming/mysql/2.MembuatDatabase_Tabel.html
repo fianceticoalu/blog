@@ -41,17 +41,18 @@ hr {
 <mark>DESCRIBE list_buku;</mark><br>
 <img src="files/describe_tabel.JPG"><br><br>
 <i>membedah struktur tabel list_buku...</i><br>
-<mark>filed id = tipe data INT atau integer / bilangan bulat. maksimal nilai yang bisa ditampung sampai 2milyar</mark><br>
-<mark>banyak yang mengira int(11) ini maksimal angka 11 digit seperti 99.999.999.999 padahal bukan seperti itu</mark><br>
-<mark>jadi saran saya abaikan saja (11) ini, ingat saja bilangan bulat</mark><br>
-<mark>PRIMARY KEY secara sederhana bisa dianggap kode yang membedakan setiap ROW / RECORD pada tabel, walau secara teknis tidak wajib tapi secara praktek real PRIMARY KEY dibutuhkan setiap tabel</mark><br>
-<mark>AUTO_INCREMENT intinya menambah satu nilai secara otomatis dari nilai sebelumnya, dalam hal ini nilai field id pada tabel list buku jika ada RECORD baru</mark><br>      
-<mark>VARCHAR singkatan dari VARIABLE CHARACTER ~ digunakan pada saat panjang data berbeda beda seperti nama seseorang, (100) menandakan maksimal panjang nama 100 karakter</mark><br>
-<mark>NOT NULL intinya field yang mempunyai NOT NULL wajib ada isinya, jika pada saat INSERT tidak ada nilai yang dimasukan akan error, kecuali ada settingan nilai default</mark><br>
-<mark>YEAR ini tipe data format angka(bukan string) yang menyimpan 4 digit angka yang bernilai 1 byte dari tahun 1901 - 2155</mark><br>
-<mark>DECIMAL ya sesuai namanya ini tipe data bilangan desimal cocok digunakan saat ingin menerapkan nominal harga</mark><br>
-<mark>DECIMAL(10,2) memaksudkan maksimal 8 digit angka dengan dua angka di belakang koma, berarti angka maxnya 99999999,99</mark><br>
+<mark>field id</mark>&nbsp;<i>tipe data INT atau integer / bilangan bulat. maksimal nilai yang bisa ditampung sampai 2milyar</i><br>
+<i>banyak yang mengira int(11) ini maksimal angka 11 digit seperti 99.999.999.999 padahal bukan seperti itu</i><br>
+<i>jadi saran saya abaikan saja (11) ini, ingat saja bilangan bulat</i><br><br>
+<mark>PRIMARY KEY</mark>&nbsp;<i>secara sederhana bisa dianggap kode yang membedakan setiap ROW / RECORD pada tabel, walau secara teknis tidak wajib tapi secara praktek real PRIMARY KEY dibutuhkan setiap tabel</i><br>
+<mark>AUTO_INCREMENT</mark>&nbsp;<i>intinya menambah satu nilai secara otomatis dari nilai sebelumnya, dalam hal ini nilai field id pada tabel list buku jika ada RECORD baru</i><br>      
+<mark>VARCHAR</mark>&nbsp;<i>singkatan dari VARIABLE CHARACTER ~ digunakan pada saat panjang data berbeda beda seperti nama seseorang, (100) menandakan maksimal panjang nama 100 karakter</i><br>
+<mark>NOT NULL</mark>&nbsp;<i>intinya field yang mempunyai NOT NULL wajib ada isinya, jika pada saat INSERT tidak ada nilai yang dimasukan akan error, kecuali ada settingan nilai default</i><br>
+<mark>YEAR</mark>&nbsp;<i>ini tipe data format angka(bukan string) yang menyimpan 4 digit angka yang bernilai 1 byte dari tahun 1901 - 2155</i><br>
+<mark>DECIMAL</mark>&nbsp;<i>ya sesuai namanya ini tipe data bilangan desimal cocok digunakan saat ingin menerapkan nominal harga</i><br>
+<mark>DECIMAL(10,2)</mark>&nbsp;<i>memaksudkan maksimal 8 digit angka dengan dua angka di belakang koma, berarti angka maxnya 99999999,99</i><br>
 <mark>tapi pada saat penulisan di sql tanda ,(koma) harus diganti dengan tanda . (titik)</mark><br><br>
+<i>memilih tipe data yang tepat sangat penting, untuk efisiensi tempat penyimpanan dan besar data, mengingat data akan selalu bertambah</i>
 <i>Mari kita lanjut dengan insert data pada tabel list_buku, nantinya data yang masuk ini disebut ROW / RECORD...</i><br>
 <mark>INSERT INTO list_buku (judul, author, genre, release_date, harga) VALUES ('MikroTik Kungfu Kitab ', 'Rendra', 'Sains-Komputer', 2019, 60000.00);</mark><br>
 <i>Mari kita bedah kode SQL diatas...</i><br>
