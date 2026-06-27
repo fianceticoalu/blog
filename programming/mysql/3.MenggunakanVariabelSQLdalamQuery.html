@@ -22,7 +22,20 @@ hr {
 
 <h2>Menggunakan variable SQL dalam Query</h2>
 
+<i>Untuk membuat variable / variabel pada MySQL/MariaDB diawali dengan tanda @</i><br>
+<mark>CONTOH : @total_harga</mark><br><br>
 
-
+<i>Perhatikan tabel dibawah ini...</i><br>
+<img src="files/descibe-list_buku.JPG"><br>
+<i>**saya menggunakan penulisan 'buku.list_buku' karena saya diluar DB buku</i><br>
+<i>kita akan menggunakan studi kasus, menyimpan harga buku JNCIA JUNOS dan CCNA200-301 kedalam variabel</i><br>
+<i>kemudian menambahkan harga JNCIA JUNOS dan CCNA200-301 </i><br>
+<i>dan terakhir menyimpan hasil penjumlahan harga kedua buku tersebut kedalam variabel....perhatikan gambar dibawah ini/i><br>
+<img src="files/variableSQL.JPG"><br>
+<i>secara fundamental untuk mengisi nilai ke dalam variabel dibutuhkan operator penugasan '='</i><br>
+<i>uniknya di MySQL/MariaDB operator penugasan ada dua <mark>':=' dan '=' dan ini tergantung penggunaan perintah yang digunakan</mark> .... lihat gambar diatas</i><br>
+<i>intinya oeprator penugasan <mark>':=' bisa digunakan di SELECT maupun SET.</mark></i>,br>
+<i>tapi operator penugasan <mark>'=' hanya bisa digunakan di SET.</mark></i><br>
+<i>jika kita menggunakan operator <mark>'=' di SELECT maka operatornya justru akan menjadi operator PEMBANDING</mark></i>
 </body>
 </html>
