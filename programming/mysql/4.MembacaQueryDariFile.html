@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Membaca Qery dari File</title>
+<style>
+body {
+  font-family: monospace;
+  background: #ffffff;
+  color: #000000;
+}
+a {
+  text-decoration: none;
+}
+hr {
+  border: 1px solid #000;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Membaca QUERY dari file</h2>
+Mengapa materi ini penting, supaya kita tak perlu menulis proses query yang panjang seperti CREATE, INSERT INTO dll. <br>
+Karena untuk studi kasus pembelajaran kedepanya, kita tak perlu menulis query untuk punya data table di dalam DB, tinggal baca file sql yang telah anda download <br>
+Misal ini lokasi file sql ada di "/home/support/mikrotik.sql" ~ direktori anda kemungkinan berbeda / dan saya menggunakan linux<br>
+<mark>SOURCE /home/support/mikrotik.sql</mark><br>
+Jika pembacaan file sql ini sukses harusnya akan ada db "mikrotik" dengan table "log_users" dan isi data pada table seperti dibawah ini <br>
+<img src="files/mikrotik_log_usersSQL.JPG"><br>
+DB mikrotik ini dengan table log_users akan kita pakai terus kedepanya, jadi jangan dihapus.<br><br>
+"Secara teknis file *.sql tidak bisa di import, tapi dibaca yaitu dengan SOURCE, Karena pada dasarnya *.sql bukan data mentah. <br>
+  Walaupun hasil akhir SOURCE adalah membuat data dari luar bisa masuk ke server" ~<i>Fiance Ticoalu</i> <br><br><br>
+</body>
+</html>
